@@ -1,0 +1,29 @@
+﻿@model EntityLayer.Concrete.Announcement
+@{
+    ViewData["Title"] = "Duyuru Detayları";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-lg p-4">
+        <h2 class="text-center mb-4">📢 Duyuru Detayları</h2>
+
+        <form class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label class="form-label fw-bold">📌 Duyuru ID</label>
+                <input type="text" class="form-control" value="@Model.ID" readonly>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">📝 İçerik</label>
+                <textarea class="form-control" rows="5" readonly>@Model.Content</textarea>
+            </div>
+        </form>
+
+        <div class="text-center mt-3">
+            <a href="@Url.Action("Index", "Default")" class="btn btn-primary">
+                🔙 Geri Dön
+            </a>
+        </div>
+    </div>
+</div>
